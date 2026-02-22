@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Foxhold - Real Estate</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="tailes.css" />
+	<meta name="description" content="Foxhold -company" />
+</head>
+<body>
+	<div class="bg-shape bg-shape-one" aria-hidden="true"></div>
+	<div class="bg-shape bg-shape-two" aria-hidden="true"></div>
+
+	<!-- Loading Screen -->
+	<div id="loader" class="loader">
+		<div class="loader-inner">
+			<svg class="logo-spin" viewBox="0 0 64 64" width="64" height="64">
+				<circle cx="32" cy="32" r="28" stroke="rgba(255,255,255,0.2)" stroke-width="6" fill="none"></circle>
+				<path d="M32 6 A26 26 0 0 1 58 32" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none"></path>
+			</svg>
+			<div class="loader-text">Foxhold</div>
+		</div>
+	</div>
+
+	<div id="app" class="app hidden">
+		<header class="site-header">
+			<div class="container">
+				<div class="brand">FOXHOLD</div>
+				<button
+					id="navToggle"
+					class="nav-toggle"
+					type="button"
+					aria-expanded="false"
+					aria-controls="siteNav"
+					aria-label="Toggle navigation menu">
+					<span class="nav-toggle-line"></span>
+					<span class="nav-toggle-line"></span>
+					<span class="nav-toggle-line"></span>
+				</button>
+				<nav id="siteNav" class="nav">
+					<a href="#home">Home</a>
+					<a href="#listings">Listings</a>
+					<a href="#contact">Contact</a>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<section id="home" class="hero">
+				<div class="container hero-inner">
+					<div class="hero-left">
+						<p class="eyebrow">Premium Real Estate Collection</p>
+						<h1>Find your next home in places that feel unforgettable.</h1>
+						<p class="lead">Explore modern homes, condos, and apartments with elegant visuals, smooth browsing, and fast filtering.</p>
+
+						<div class="search">
+							<input id="q" type="search" placeholder="Search city or keyword" />
+							<select id="filterType" title="Filter by property type">
+								<option value="all">All Types</option>
+								<option value="house">House</option>
+								<option value="apartment">Apartment</option>
+								<option value="condo">Condo</option>
+							</select>
+							<button id="searchBtn" class="btn">Search</button>
+						</div>
+
+						<div class="hero-stats">
+							<div class="stat">
+								<span class="stat-value">250+</span>
+								<span class="stat-label">Live Listings</span>
+							</div>
+							<div class="stat">
+								<span class="stat-value">95%</span>
+								<span class="stat-label">Client Match Rate</span>
+							</div>
+							<div class="stat">
+								<span class="stat-value">24h</span>
+								<span class="stat-label">Avg. Response Time</span>
+							</div>
+						</div>
+					</div>
+					<div class="hero-right">
+						<div class="hero-card animate-float">
+							<img src="https://th.bing.com/th/id/R.0072f8d3f1b4a3623c60b5095626dc0e?rik=nlQKC98TUa0ylA&riu=http%3a%2f%2fcdn.home-designing.com%2fwp-content%2fuploads%2f2020%2f04%2fLuxury-house-exterior.jpg&ehk=9vifs12mShsODPqnjY5o8LFjIzFPKo60T%2bMl2vveWQo%3d&risl=&pid=ImgRaw&r=0" alt="house" loading="lazy" />
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="listings" class="listings">
+				<div class="container">
+					<h2>Featured Listings</h2>
+					<p class="section-copy">A curated set of homes designed for comfort, style, and long-term value.</p>
+					<div id="filters" class="filters">
+						<div class="chip active" data-type="all">All</div>
+						<div class="chip" data-type="house">Houses</div>
+						<div class="chip" data-type="apartment">Apartments</div>
+						<div class="chip" data-type="condo">Condos</div>
+					</div>
+
+					<div id="grid" class="grid" aria-live="polite"></div>
+				</div>
+			</section>
+
+			<section id="cta" class="cta">
+				<div class="container">
+					<h3>Want access to off-market properties?</h3>
+					<p>Talk with our team for tailored recommendations, private tours, and listing alerts.</p>
+					<a href="#contact" class="btn btn-ghost">Get In Touch</a>
+				</div>
+			</section>
+
+			<section id="contact" class="contact">
+				<div class="container">
+					<h2>Contact</h2>
+					<p>Email: hello@foxhold.example</p>
+					<div class="map-wrap" aria-label="Office location map">
+						<iframe
+							title="Foxhold location"
+							src="https://www.google.com/maps?q=Lagos%2C%20Nigeria&output=embed"
+							loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"
+							allowfullscreen>
+						</iframe>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="container">(c) 2026 Foxhold - Demo site</div>
+		</footer>
+	</div>
+
+	<!-- Property Detail Modal -->
+	<div id="modal" class="modal" aria-hidden="true">
+		<div class="modal-backdrop"></div>
+		<div class="modal-panel">
+			<button id="modalClose" class="modal-close">X</button>
+			<div class="modal-body">
+				<div class="gallery">
+					<img id="modalImage" src="" alt="Property image" />
+					<div class="gallery-controls">
+						<button id="prevImg">&lt;</button>
+						<button id="nextImg">&gt;</button>
+					</div>
+				</div>
+				<div class="details">
+					<h3 id="modalTitle"></h3>
+					<p id="modalLocation"></p>
+					<p id="modalPrice" class="price"></p>
+					<p id="modalDesc"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="tailes.js"></script>
+</body>
+</html>
+
+
